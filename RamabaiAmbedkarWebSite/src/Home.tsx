@@ -115,16 +115,27 @@ const Home: React.FC<HomeProps> = ({ language }) => {
     <>
       <section className="school-hero">
         <img src={schoolLogo} alt="School Logo" className="school-hero-img" />
-        <div className="school-hero-content">
-          <h1>{c.schoolName}</h1>
-          <div className="tagline">
+      </section>
+      
+      {/* Hero Message Section Below Banner */}
+      <section className="hero-message-section">
+        <div className="hero-message-content">
+          <h2>{c.schoolName}</h2>
+          <div className="subtitle">
+            {language === 'en' 
+              ? 'Empowering students with quality education and holistic development for over 37 years. We provide a safe, inclusive, and inspiring environment that fosters critical thinking, creativity, and responsible citizenship.'
+              : '३७ वर्षांपासून गुणवत्तापूर्ण शिक्षण आणि सर्वांगीण विकासाद्वारे विद्यार्थ्यांना सक्षम करत आहोत. आम्ही सुरक्षित, समावेशक आणि प्रेरणादायी वातावरण पुरवतो जेथे चिकित्सक विचार, सर्जनशीलता आणि जबाबदार नागरिकत्व विकसित होते.'
+            }
+          </div>
+          <div className="hero-tagline">
             {c.tagline.map((t: string, i: number) => (
-              <span key={i} className="tag">{t}</span>
+              <span key={i} className="hero-tag">{t}</span>
             ))}
           </div>
-          <div className="motto">{c.motto}</div>
+          <div className="hero-motto">{c.motto}</div>
         </div>
       </section>
+
       <main className="school-content">
         <section className="section-card about-section">
           <h2>{language === 'en' ? 'About the School' : 'शाळेबद्दल'}</h2>

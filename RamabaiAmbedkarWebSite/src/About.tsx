@@ -130,11 +130,32 @@ const About: React.FC<AboutProps> = ({ language }) => {
     <>
       <section className="about-hero">
         <img src={schoolEntry} alt="School Entry" className="about-hero-img" />
-        <div className="about-hero-content">
-          <h1>{c.title}</h1>
-          <p className="subtitle">{c.subtitle}</p>
+      </section>
+      
+      {/* Hero Message Section Below Banner */}
+      <section className="hero-message-section">
+        <div className="hero-message-content">
+          <h2>{c.title}</h2>
+          <div className="subtitle">
+            {language === 'en' 
+              ? 'Discover our rich history, vision, and commitment to excellence in education. Learn about our facilities, achievements, and the dedicated team that makes it all possible.'
+              : 'आमचा समृद्ध इतिहास, दृष्टी आणि शिक्षणातील उत्कृष्टतेसाठीची वचनबद्धता जाणून घ्या. आमच्या सुविधा, यशे आणि हे सर्व शक्य करणाऱ्या समर्पित टीमबद्दल जाणून घ्या.'
+            }
+          </div>
+          <div className="hero-tagline">
+            <span className="hero-tag">{language === 'en' ? 'Excellence' : 'उत्कृष्टता'}</span>
+            <span className="hero-tag">{language === 'en' ? 'Innovation' : 'नावीन्य'}</span>
+            <span className="hero-tag">{language === 'en' ? 'Leadership' : 'नेतृत्व'}</span>
+          </div>
+          <div className="hero-motto">
+            {language === 'en' 
+              ? 'Building Future Leaders Since 1986'
+              : '१९८६ पासून भविष्यातील नेते तयार करत आहोत'
+            }
+          </div>
         </div>
       </section>
+
       <main className="about-content">
         <section className="about-section">
           <div className="about-grid">
@@ -199,7 +220,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
           <div className="values-grid">
             {c.values.items.map((item: string, i: number) => (
               <div className="value-card" key={i}>
-                <div className="value-icon">💎</div>
+                <div className="value-icon">⭐</div>
                 <h4>{item}</h4>
               </div>
             ))}
@@ -212,8 +233,8 @@ const About: React.FC<AboutProps> = ({ language }) => {
               <h3>{language === 'en' ? 'Cultural Excellence' : 'सांस्कृतिक उत्कृष्टता'}</h3>
               <p>
                 {language === 'en' 
-                  ? 'Our students excel not only in academics but also in cultural activities, showcasing their talents through various performances and competitions.'
-                  : 'आमचे विद्यार्थी केवळ शिक्षणातच नव्हे तर सांस्कृतिक उपक्रमांमध्येही उत्कृष्ट कामगिरी करतात, विविध कार्यक्रम आणि स्पर्धांद्वारे त्यांची प्रतिभा दाखवतात.'
+                  ? 'Our students excel not only in academics but also in cultural activities, sports, and community service. We believe in nurturing well-rounded individuals who contribute positively to society.'
+                  : 'आमचे विद्यार्थी केवळ शैक्षणिक क्षेत्रातच नव्हे तर सांस्कृतिक उपक्रम, क्रीडा आणि समुदाय सेवेतही उत्कृष्ट कामगिरी करतात. आम्ही समाजाला सकारात्मक योगदान देणारे सर्वांगीण व्यक्तिमत्त्व विकसित करण्यावर विश्वास ठेवतो.'
                 }
               </p>
             </div>
